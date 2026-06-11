@@ -1,0 +1,5 @@
+[build]
+  publish = "dist/client"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
