@@ -649,63 +649,141 @@ function HomePage() {
       <ElectricVanBanner />
 
       {/* ── WHY MIT ──────────────────────────────────────────── */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-start">
-        <AnimateIn direction="right">
-          <div>
-            <span className="eyebrow text-xs text-primary">Perché noi</span>
-            <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl text-secondary">
-              Perché Scegliere MIT?
-            </h2>
-            <p className="mt-3 text-foreground/70">
-              Tecnici locali, prezzi fissi, nessuna sorpresa. Un servizio pensato
-              per le famiglie del Trentino-Alto Adige.
-            </p>
-            <ul className="mt-6 space-y-3">
-              {REASONS.map((r, i) => (
-                <li key={i} className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-primary mt-0.5" />
-                  <span
-                    className="text-foreground/85"
-                    dangerouslySetInnerHTML={{ __html: r }}
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-        </AnimateIn>
+      <section className="bg-[#F5F2EC] border-t border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 grid lg:grid-cols-[1fr_360px] xl:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-start">
 
-        <AnimateIn delay={100}>
-          <div className="rounded-2xl bg-white border-2 border-primary p-7 shadow-card">
-            <span className="inline-flex items-center gap-2 rounded-full bg-amber-soft text-secondary px-3 py-1 text-xs font-semibold">
-              <Sparkles className="h-3.5 w-3.5 text-accent" /> Prenota ora
-            </span>
-            <a
-              href={`tel:${SITE.phoneTel}`}
-              className="mt-4 block font-display font-bold text-3xl sm:text-4xl text-secondary hover:text-primary transition-colors"
-            >
-              {SITE.phoneDisplay}
-            </a>
-            <p className="mt-2 text-foreground/80">
-              Chiama subito o scrivici su WhatsApp per fissare il sopralluogo.
-            </p>
-            <div className="mt-10 flex flex-col gap-2">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+          {/* LEFT */}
+          <AnimateIn direction="right">
+            <div>
+              <span className="eyebrow text-xs text-primary">Perché noi</span>
+              <h2 className="mt-2 font-display font-bold text-3xl sm:text-4xl text-secondary leading-tight">
+                Perché scegliere MIT?
+              </h2>
+              <p className="mt-3 text-foreground/70 max-w-md leading-relaxed">
+                Tecnici locali, prezzi fissi, nessuna sorpresa. Un servizio pensato
+                per le famiglie del Trentino-Alto Adige.
+              </p>
+
+              {/* Price badge */}
+              <div className="mt-6 mb-8 inline-flex items-center gap-2 rounded-full bg-secondary text-green-soft px-4 py-2 text-sm font-semibold">
+                <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
+                Sopralluogo e diagnosi a 70€ fissi — ovunque in Trentino
+              </div>
+
+              {/* Groups */}
+              <div className="flex flex-col gap-6">
+                {/* Group 1 */}
+                <div>
+                  <p className="eyebrow text-[11px] text-primary/70 mb-3">Qualità e trasparenza</p>
+                  <ul className="flex flex-col gap-2.5">
+                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
+                      <CheckCircle2 className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                      <span>Tecnici <strong className="font-semibold">certificati e qualificati</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
+                      <CheckCircle2 className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                      <span>Ricambi originali garantiti</span>
+                    </li>
+                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
+                      <CheckCircle2 className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                      <span>Diagnosi onesta: se non conviene riparare, <strong className="font-semibold">te lo diciamo</strong></span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="h-px bg-border" />
+
+                {/* Group 2 */}
+                <div>
+                  <p className="eyebrow text-[11px] text-primary/70 mb-3">Rapidità e copertura</p>
+                  <ul className="flex flex-col gap-2.5">
+                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
+                      <Clock className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                      <span>Intervento rapido: <strong className="font-semibold">24–48 ore</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
+                      <Globe2 className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                      <span>Copertura di tutte le valli del Trentino</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="h-px bg-border" />
+
+                {/* Group 3 */}
+                <div>
+                  <p className="eyebrow text-[11px] text-primary/70 mb-3">Dopo l'intervento</p>
+                  <ul className="flex flex-col gap-2.5">
+                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
+                      <CheckCircle2 className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                      <span>Assistenza post-intervento inclusa</span>
+                    </li>
+                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
+                      <Leaf className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                      <span>Smaltimento RAEE etico e certificato</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </AnimateIn>
+
+          {/* RIGHT CARD */}
+          <AnimateIn delay={100}>
+            <div className="rounded-2xl bg-white border border-border p-6 shadow-card lg:sticky lg:top-4">
+              {/* Header */}
+              <div className="flex items-center justify-between mb-5">
+                <span className="inline-flex items-center gap-2 rounded-full bg-green-soft text-secondary px-3 py-1.5 text-xs font-semibold">
+                  <span className="h-[7px] w-[7px] rounded-full bg-primary inline-block" />
+                  Disponibili oggi
+                </span>
+                <span className="text-xs text-muted-foreground">Risposta in giornata</span>
+              </div>
+
+              {/* Phone */}
+              <a
+                href={`tel:${SITE.phoneTel}`}
+                className="block font-display font-bold text-[1.9rem] leading-none text-secondary hover:text-primary transition-colors"
+              >
+                {SITE.phoneDisplay}
+              </a>
+              <p className="mt-2 mb-5 text-sm text-foreground/70 leading-relaxed">
+                Chiama o scrivi su WhatsApp per fissare il sopralluogo. Nessun anticipo richiesto.
+              </p>
+
+              {/* CTAs */}
+              <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-white font-semibold mb-2.5">
                 <a href={`tel:${SITE.phoneTel}`}>
-                  <Phone className="h-4 w-4" /> Chiama Ora
+                  <Phone className="h-4 w-4" /> Chiama ora
                 </a>
               </Button>
-              <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#1ebe5b] text-white font-semibold">
+              <Button asChild size="lg" variant="outline" className="w-full border-secondary text-secondary hover:bg-secondary/5 font-semibold">
                 <a href={SITE.whatsappDefault} target="_blank" rel="noopener">
                   <MessageCircle className="h-4 w-4" /> Scrivi su WhatsApp
                 </a>
               </Button>
+
+              <div className="h-px bg-border my-5" />
+
+              {/* Trust */}
+              <ul className="flex flex-col gap-2">
+                <li className="flex items-center gap-2 text-xs text-primary/80">
+                  <ShieldCheck className="h-[15px] w-[15px] text-primary shrink-0" />
+                  Nessun anticipo · Preventivo gratuito
+                </li>
+                <li className="flex items-center gap-2 text-xs text-primary/80">
+                  <Star className="h-[15px] w-[15px] text-primary shrink-0" />
+                  Tecnici certificati con garanzia sul lavoro
+                </li>
+                <li className="flex items-center gap-2 text-xs text-primary/80">
+                  <MapPin className="h-[15px] w-[15px] text-primary shrink-0" />
+                  70€ fissi per il sopralluogo, ovunque in Trentino
+                </li>
+              </ul>
             </div>
-            <p className="mt-10 inline-flex items-center gap-2 text-xs text-muted-foreground">
-              <ShieldCheck className="h-3.5 w-3.5 text-primary" />
-              Nessun anticipo · Risposta in giornata
-            </p>
-          </div>
-        </AnimateIn>
+          </AnimateIn>
+
+        </div>
       </section>
 
       {/* ── CITIES ───────────────────────────────────────────── */}
