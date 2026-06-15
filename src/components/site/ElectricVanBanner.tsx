@@ -34,19 +34,6 @@ export function ElectricVanBanner() {
                 un atto completo di rispetto per l'ambiente e per le valli del Trentino.
               </p>
             </div>
-            <ul className="mt-5 space-y-2">
-              {[
-                "0 g/km di CO₂ nelle emissioni locali",
-                "Ricarica da fonti di energia rinnovabile",
-                "Meno rumore nelle zone residenziali",
-                "Un impegno concreto per il territorio trentino",
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2 text-sm text-foreground/80">
-                  <Leaf className="h-4 w-4 shrink-0 text-primary" />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
         </AnimateIn>
 
