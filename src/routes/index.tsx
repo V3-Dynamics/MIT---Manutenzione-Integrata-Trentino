@@ -451,7 +451,7 @@ function HomePage() {
 
       {/* ── QUICK CONTACT ────────────────────────────────────── */}
       <section className="bg-white border-y border-border" id="contatta">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-10 items-start">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-10 items-center">
           {/* Left: CTA info */}
           <AnimateIn direction="right">
             <div>
@@ -650,7 +650,7 @@ function HomePage() {
 
       {/* ── WHY MIT ──────────────────────────────────────────── */}
       <section className="bg-[#F5F2EC] border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 grid lg:grid-cols-[1fr_360px] xl:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-start">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 grid lg:grid-cols-[1fr_360px] xl:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-center">
 
           {/* LEFT */}
           <AnimateIn direction="right">
