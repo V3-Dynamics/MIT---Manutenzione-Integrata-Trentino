@@ -757,7 +757,8 @@ function HomePage() {
                   <Phone className="h-4 w-4" /> Chiama ora
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="w-full border-secondary text-secondary hover:bg-secondary/5 font-semibold">
+              {/* CTAs */}
+              <Button asChild size="lg" className="w-full bg-[#25D366] hover:bg-[#1ebe5b] text-white font-semibold mb-2.5">
                 <a href={SITE.whatsappDefault} target="_blank" rel="noopener">
                   <MessageCircle className="h-4 w-4" /> Scrivi su WhatsApp
                 </a>
@@ -767,16 +768,16 @@ function HomePage() {
 
               {/* Trust */}
               <ul className="flex flex-col gap-2">
-                <li className="flex items-center gap-2 text-xs text-primary/80">
-                  <ShieldCheck className="h-[15px] w-[15px] text-primary shrink-0" />
+                <li className="flex items-center gap-2 text-xs text-secondary">
+                  <ShieldCheck className="h-[15px] w-[15px] text-secondary shrink-0" />
                   Nessun anticipo · Preventivo gratuito
                 </li>
-                <li className="flex items-center gap-2 text-xs text-primary/80">
-                  <Star className="h-[15px] w-[15px] text-primary shrink-0" />
+                <li className="flex items-center gap-2 text-xs text-secondary">
+                  <Star className="h-[15px] w-[15px] text-secondary shrink-0" />
                   Tecnici certificati con garanzia sul lavoro
                 </li>
-                <li className="flex items-center gap-2 text-xs text-primary/80">
-                  <MapPin className="h-[15px] w-[15px] text-primary shrink-0" />
+                <li className="flex items-center gap-2 text-xs text-secondary">
+                  <MapPin className="h-[15px] w-[15px] text-secondary shrink-0" />
                   70€ fissi per il sopralluogo, ovunque in Trentino
                 </li>
               </ul>
