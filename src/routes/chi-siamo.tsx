@@ -3,6 +3,7 @@ import { ArrowRight, Handshake, Leaf, Mountain, Phone, Recycle, Star, Wrench } f
 import { Button } from "@/components/ui/button";
 import { AnimateIn } from "@/components/site/AnimateIn";
 import { LeafDivider } from "@/components/site/LeafDivider";
+import { ElectricVanBanner } from "@/components/site/ElectricVanBanner";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/chi-siamo")({
@@ -132,6 +133,9 @@ function ChiSiamoPage() {
           </div>
         </div>
       </section>
+
+      {/* Electric Van */}
+      <ElectricVanBanner />
 
       {/* Stats */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">

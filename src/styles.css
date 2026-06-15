@@ -166,6 +166,10 @@
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
 @layer utilities {
   .animate-mit-fade-up   { animation: mit-fade-up 0.65s ease-out forwards; }
@@ -174,6 +178,7 @@
   .animate-mit-slide-right { animation: mit-slide-right 0.65s ease-out forwards; }
   .animate-mit-pulse-ring { animation: mit-pulse-ring 2s infinite; }
   .animate-mit-float     { animation: mit-float 4s ease-in-out infinite; }
+  .animate-marquee       { animation: marquee 50s linear infinite; }
 }
 
 /* ── Base ────────────────────────────────────────────────── */

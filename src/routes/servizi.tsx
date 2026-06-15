@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimateIn } from "@/components/site/AnimateIn";
+import { BrandsSlider } from "@/components/site/BrandsSlider";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/servizi")({
@@ -185,6 +186,9 @@ function ServiziPage() {
           </AnimateIn>
         ))}
       </section>
+
+      {/* Brands slider */}
+      <BrandsSlider />
 
       {/* CTA band */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
