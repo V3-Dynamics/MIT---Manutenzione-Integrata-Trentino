@@ -691,22 +691,6 @@ function HomePage() {
                   </ul>
                 </div>
 
-                <div className="h-px bg-border" />
-
-                {/* Group 2 */}
-                <div>
-                  <p className="eyebrow text-[11px] text-primary/70 mb-3">Rapidità e copertura</p>
-                  <ul className="flex flex-col gap-2.5">
-                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
-                      <Clock className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                      <span>Intervento rapido: <strong className="font-semibold">24–48 ore</strong></span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-sm text-secondary/90">
-                      <Globe2 className="h-[17px] w-[17px] shrink-0 text-primary mt-0.5" aria-hidden="true" />
-                      <span>Copertura di tutte le valli del Trentino</span>
-                    </li>
-                  </ul>
-                </div>
 
                 <div className="h-px bg-border" />
 
