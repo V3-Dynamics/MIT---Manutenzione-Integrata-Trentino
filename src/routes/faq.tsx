@@ -172,7 +172,7 @@ const FAQ_CATEGORIES = [
     items: [
       {
         q: "Come si prenota un intervento con MIT in Trentino?",
-        a: "Puoi prenotare in tre modi: telefonando al 345 123 3567 (Lun–Ven 8–18, Sab 8–13), inviando un messaggio WhatsApp allo stesso numero, oppure compilando il modulo di contatto su questo sito. Risponderemo entro poche ore per concordare data e orario del sopralluogo.",
+        a: "Puoi prenotare in tre modi: telefonando al 339 507 8587 (Lun–Ven 8–18, Sab 8–13), inviando un messaggio WhatsApp allo stesso numero, oppure compilando il modulo di contatto su questo sito. Risponderemo entro poche ore per concordare data e orario del sopralluogo.",
       },
       {
         q: "MIT è disponibile anche il sabato?",

@@ -13,6 +13,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { FloatingWhatsApp, MobileCallBar } from "@/components/site/FloatingActions";
+import { CookieBanner } from "@/components/site/CookieBanner";
 import { SITE } from "@/lib/site";
 
 function NotFoundComponent() {
@@ -85,6 +86,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Riparazione professionale di elettrodomestici a domicilio in Trentino-Alto Adige. Sopralluogo fisso 70€. Paghi solo se ripariamo.",
       },
       { name: "author", content: "Manutenzione Integrata Trentino" },
+      { name: "geo.region", content: "IT-TN" },
+      { name: "geo.placename", content: "Trentino-Alto Adige, Italia" },
       { property: "og:site_name", content: SITE.name },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "it_IT" },
@@ -113,9 +116,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "HomeAndConstructionBusiness",
+          "@id": `${SITE.url}/#business`,
           name: "Manutenzione Integrata Trentino",
+          legalName: "Manutenzione Integrata Trentino",
+          vatID: "IT02830530222",
           description:
-            "Riparazione e manutenzione di grandi elettrodomestici a domicilio in Trentino-Alto Adige. Sopralluogo fisso 70€.",
+            "Riparazione e manutenzione di grandi elettrodomestici a domicilio in Trentino-Alto Adige. Sopralluogo fisso 70€. Intervento entro 24–48 ore. Paghi solo se ripariamo.",
+          url: SITE.url,
           telephone: SITE.phoneTel,
           email: SITE.email,
           priceRange: "€€",
@@ -207,6 +214,7 @@ function RootComponent() {
         <SiteFooter />
         <FloatingWhatsApp />
         <MobileCallBar />
+        <CookieBanner />
       </div>
     </QueryClientProvider>
   );

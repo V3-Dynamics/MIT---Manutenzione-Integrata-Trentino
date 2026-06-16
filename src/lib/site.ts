@@ -2,15 +2,15 @@ export const SITE = {
   name: "Manutenzione Integrata Trentino",
   short: "MIT",
   url: "https://www.mantenzioneintegrata.it",
-  phoneDisplay: "345 123 3567",
-  phoneTel: "+393451233567",
-  whatsappNumber: "393451233567",
+  phoneDisplay: "339 507 8587",
+  phoneTel: "+393395078587",
+  whatsappNumber: "393395078587",
   whatsappDefault:
-    "https://wa.me/393451233567?text=Ciao%2C%20vorrei%20un%20intervento%20per%20il%20mio%20elettrodomestico",
+    "https://wa.me/393395078587?text=Buongiorno%2C%20chiedo%20assistenza%20per%20il%20mio%20elettrodomestico.",
   whatsappPreventivo:
-    "https://wa.me/393451233567?text=Ciao%2C%20vorrei%20un%20preventivo",
+    "https://wa.me/393395078587?text=Buongiorno%2C%20chiedo%20assistenza%20per%20il%20mio%20elettrodomestico.",
   email: "info@mantenzioneintegrata.it",
   area: "Trentino-Alto Adige",
   hours: "Lun–Ven: 8:00–18:00 | Sab: 8:00–13:00",
-  piva: "P.IVA XXXXXXXXXXX",
+  piva: "P.IVA 02830530222",
 } as const;

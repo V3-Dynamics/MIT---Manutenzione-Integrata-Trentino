@@ -179,7 +179,7 @@ const HOME_FAQS = [
   },
   {
     q: "Come si contatta MIT per una riparazione in Trentino?",
-    a: "Puoi contattare Manutenzione Integrata Trentino (MIT) telefonando al 345 123 3567, inviando un messaggio WhatsApp allo stesso numero, oppure compilando il modulo online su questo sito. L'orario di disponibilità è lunedì–venerdì 8:00–18:00 e sabato 8:00–13:00.",
+    a: "Puoi contattare Manutenzione Integrata Trentino (MIT) telefonando al 339 507 8587, inviando un messaggio WhatsApp allo stesso numero, oppure compilando il modulo online su questo sito. L'orario di disponibilità è lunedì–venerdì 8:00–18:00 e sabato 8:00–13:00.",
   },
 ];
 

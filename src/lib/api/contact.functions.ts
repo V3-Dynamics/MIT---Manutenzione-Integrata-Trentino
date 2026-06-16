@@ -105,7 +105,7 @@ export const sendContactEmail = createServerFn({ method: "POST" })
     if (!res.ok) {
       const err = await res.text().catch(() => "");
       console.error("Resend error:", res.status, err);
-      throw new Error("Errore nell'invio. Riprova o chiamaci direttamente al 345 123 3567.");
+      throw new Error("Errore nell'invio. Riprova o chiamaci direttamente al 339 507 8587.");
     }
 
     return { ok: true };
