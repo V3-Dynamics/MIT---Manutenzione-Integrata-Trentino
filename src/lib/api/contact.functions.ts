@@ -5,6 +5,7 @@ export const contactSchema = z.object({
   name: z.string().min(2, "Inserisci nome e cognome").max(100),
   phone: z.string().min(6, "Numero di telefono non valido").max(30),
   email: z.string().email("Email non valida").optional().or(z.literal("")),
+  address: z.string().min(5, "Inserisci l'indirizzo di intervento").max(250),
   city: z.string().max(100).optional().or(z.literal("")),
   appliance: z.string().min(1, "Seleziona un elettrodomestico"),
   problem: z.string().min(10, "Descrivi il problema (min. 10 caratteri)").max(2000),
@@ -77,7 +78,7 @@ export const sendContactEmail = createServerFn({ method: "POST" })
   <tr><th>Nome e Cognome</th><td>${escapeHtml(data.name)}</td></tr>
   <tr><th>Telefono</th><td><a href="tel:${escapeHtml(data.phone)}">${escapeHtml(data.phone)}</a></td></tr>
   <tr><th>Email</th><td>${data.email ? `<a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a>` : "—"}</td></tr>
-  <tr><th>Comune</th><td>${data.city ? escapeHtml(data.city) : "—"}</td></tr>
+  <tr><th>Indirizzo intervento</th><td>${escapeHtml(data.address)}</td></tr>
   <tr><th>Elettrodomestico</th><td>${escapeHtml(data.appliance)}</td></tr>
   <tr><th>Problema</th><td>${escapeHtml(data.problem).replace(/\n/g, "<br>")}</td></tr>
 </table>
@@ -97,7 +98,7 @@ export const sendContactEmail = createServerFn({ method: "POST" })
         from: "MIT Sito Web <noreply@mantenzioneintegrata.it>",
         to: ["info@mantenzioneintegrata.it"],
         reply_to: replyTo,
-        subject: `Nuova richiesta: ${data.appliance} — ${data.name} (${data.city})`,
+        subject: `Nuova richiesta: ${data.appliance} — ${data.name} (${data.address})`,
         html,
       }),
     });
@@ -105,7 +106,7 @@ export const sendContactEmail = createServerFn({ method: "POST" })
     if (!res.ok) {
       const err = await res.text().catch(() => "");
       console.error("Resend error:", res.status, err);
-      throw new Error("Errore nell'invio. Riprova o chiamaci direttamente al 339 507 8587.");
+      throw new Error("Errore nell'invio. Riprova o chiamaci direttamente al 351 498 4550.");
     }
 
     return { ok: true };

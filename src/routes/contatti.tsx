@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { AnimateIn } from "@/components/site/AnimateIn";
+import { AddressAutocomplete } from "@/components/site/AddressAutocomplete";
 import { SITE } from "@/lib/site";
 import {
   sendContactEmail,
@@ -142,7 +143,8 @@ function ContattiForm() {
           name: values.name,
           phone: values.phone,
           email: values.email ?? "",
-          city: values.city,
+          address: values.address,
+          city: values.city ?? "",
           appliance: values.appliance,
           problem: values.problem,
           honeypot: values.honeypot ?? "",
@@ -209,6 +211,31 @@ function ContattiForm() {
         )}
       </div>
 
+      <div className="sm:col-span-2">
+        <Label htmlFor="cnt-address">Indirizzo di intervento *</Label>
+        <AddressAutocomplete
+          id="cnt-address"
+          value=""
+          onChange={(v) => setValue("address", v, { shouldValidate: true })}
+          error={!!errors.address}
+        />
+        <input
+          type="hidden"
+          {...register("address", {
+            required: "Inserisci l'indirizzo di intervento",
+            minLength: { value: 5, message: "Indirizzo troppo breve" },
+          })}
+        />
+        {errors.address && (
+          <p className="mt-1 text-xs text-destructive" role="alert">
+            {errors.address.message}
+          </p>
+        )}
+        <p className="mt-1 text-xs text-muted-foreground">
+          Inizia a digitare via e città — i suggerimenti appariranno automaticamente.
+        </p>
+      </div>
+
       <div>
         <Label htmlFor="cnt-phone">Telefono *</Label>
         <Input
@@ -221,7 +248,7 @@ function ContattiForm() {
           autoComplete="tel"
           aria-invalid={!!errors.phone}
           className={`mt-1.5 ${errors.phone ? "border-destructive focus-visible:ring-destructive" : ""}`}
-          placeholder="+39 345 000 0000"
+          placeholder="+39 351 498 4550"
         />
         {errors.phone && (
           <p className="mt-1 text-xs text-destructive" role="alert">
@@ -242,22 +269,6 @@ function ContattiForm() {
           autoComplete="email"
           className="mt-1.5"
         />
-      </div>
-
-      <div className="sm:col-span-2">
-        <Label htmlFor="cnt-city">Comune / Città *</Label>
-        <Input
-          id="cnt-city"
-          {...register("city", { required: "Campo obbligatorio", minLength: { value: 2, message: "Min. 2 caratteri" } })}
-          aria-invalid={!!errors.city}
-          className={`mt-1.5 ${errors.city ? "border-destructive focus-visible:ring-destructive" : ""}`}
-          placeholder="Es. Trento, Rovereto, Bolzano..."
-        />
-        {errors.city && (
-          <p className="mt-1 text-xs text-destructive" role="alert">
-            {errors.city.message}
-          </p>
-        )}
       </div>
 
       <div className="sm:col-span-2">

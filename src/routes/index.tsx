@@ -46,6 +46,7 @@ import { AnimateIn } from "@/components/site/AnimateIn";
 import { LeafDivider } from "@/components/site/LeafDivider";
 import { BrandsSlider } from "@/components/site/BrandsSlider";
 import { ElectricVanBanner } from "@/components/site/ElectricVanBanner";
+import { AddressAutocomplete } from "@/components/site/AddressAutocomplete";
 import { SITE } from "@/lib/site";
 import {
   sendContactEmail,
@@ -216,7 +217,7 @@ const CITIES = [
   "Tione", "Bressanone", "Mori", "Levico Terme", "Mezzolombardo",
 ];
 
-type QCFormValues = Pick<ContactFormData, "name" | "phone" | "appliance" | "problem" | "honeypot">;
+type QCFormValues = Pick<ContactFormData, "name" | "phone" | "address" | "appliance" | "problem" | "honeypot">;
 
 const QC_APPLIANCES = ["Lavatrice", "Lavastoviglie", "Frigorifero", "Forno", "Piano cottura", "Asciugatrice", "Climatizzatore", "Altro"] as const;
 
@@ -240,6 +241,7 @@ function QuickContactForm() {
           name: values.name,
           phone: values.phone,
           email: "",
+          address: values.address,
           city: "",
           appliance: values.appliance,
           problem: values.problem,
@@ -291,6 +293,23 @@ function QuickContactForm() {
           aria-invalid={!!errors.name}
         />
         {errors.name && <p className="mt-1 text-xs text-destructive" role="alert">{errors.name.message}</p>}
+      </div>
+      <div className="sm:col-span-2">
+        <Label htmlFor="qc-address">Indirizzo di intervento *</Label>
+        <AddressAutocomplete
+          id="qc-address"
+          value=""
+          onChange={(v) => setValue("address", v, { shouldValidate: true })}
+          error={!!errors.address}
+        />
+        <input
+          type="hidden"
+          {...register("address", {
+            required: "Inserisci l'indirizzo di intervento",
+            minLength: { value: 5, message: "Indirizzo troppo breve" },
+          })}
+        />
+        {errors.address && <p className="mt-1 text-xs text-destructive" role="alert">{errors.address.message}</p>}
       </div>
       <div>
         <Label htmlFor="qc-phone">Telefono *</Label>
