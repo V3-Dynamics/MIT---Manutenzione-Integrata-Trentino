@@ -46,6 +46,8 @@ import { LeafDivider } from "@/components/site/LeafDivider";
 import { BrandsSlider } from "@/components/site/BrandsSlider";
 import { ElectricVanBanner } from "@/components/site/ElectricVanBanner";
 import { AddressAutocomplete } from "@/components/site/AddressAutocomplete";
+import { InfoAggiuntiveStrip } from "@/components/site/InfoAggiuntiveStrip";
+import { GaranziaStrip } from "@/components/site/GaranziaStrip";
 import { SITE } from "@/lib/site";
 import {
   sendContactEmail,
@@ -609,6 +611,13 @@ function HomePage() {
         </div>
       </section>
 
+      {/* ── GARANZIA ─────────────────────────────────────────── */}
+      <section className="bg-white border-t border-border">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+          <GaranziaStrip />
+        </div>
+      </section>
+
       {/* ── BRANDS SLIDER ────────────────────────────────────── */}
       <BrandsSlider />
 
@@ -794,6 +803,13 @@ function HomePage() {
             </div>
           </AnimateIn>
 
+        </div>
+      </section>
+
+      {/* ── INFO AGGIUNTIVE ─────────────────────────────────── */}
+      <section className="bg-white border-t border-border">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+          <InfoAggiuntiveStrip />
         </div>
       </section>
 

@@ -13,6 +13,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { AnimateIn } from "@/components/site/AnimateIn";
 import { BrandsSlider } from "@/components/site/BrandsSlider";
+import { InfoAggiuntiveStrip } from "@/components/site/InfoAggiuntiveStrip";
+import { GaranziaStrip } from "@/components/site/GaranziaStrip";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/servizi")({
@@ -178,11 +180,25 @@ function ServiziPage() {
         ))}
       </section>
 
+      {/* Garanzia */}
+      <section className="bg-white border-t border-border">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+          <GaranziaStrip />
+        </div>
+      </section>
+
+      {/* Info strip */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-6 pb-12">
+          <InfoAggiuntiveStrip />
+        </div>
+      </section>
+
       {/* Brands slider */}
       <BrandsSlider />
 
       {/* CTA band */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <AnimateIn direction="scale">
           <div className="rounded-3xl bg-primary text-primary-foreground p-8 sm:p-12 flex flex-col md:flex-row gap-6 items-center justify-between shadow-card">
             <div>

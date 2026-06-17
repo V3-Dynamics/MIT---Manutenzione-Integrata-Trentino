@@ -27,6 +27,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { AnimateIn } from "@/components/site/AnimateIn";
 import { AddressAutocomplete } from "@/components/site/AddressAutocomplete";
+import { InfoAggiuntiveStrip } from "@/components/site/InfoAggiuntiveStrip";
 import { SITE } from "@/lib/site";
 import {
   sendContactEmail,
@@ -538,6 +539,13 @@ function ContattiPage() {
             </p>
           </div>
         </AnimateIn>
+      </section>
+
+      {/* Info strip */}
+      <section className="bg-white border-t border-border">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+          <InfoAggiuntiveStrip />
+        </div>
       </section>
     </div>
   );
