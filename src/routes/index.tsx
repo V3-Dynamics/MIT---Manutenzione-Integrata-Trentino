@@ -16,7 +16,6 @@ import {
   Recycle,
   Send,
   ShieldCheck,
-  Snowflake,
   Sparkles,
   Star,
   TrendingDown,
@@ -64,7 +63,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Riparazione professionale di lavatrici, lavastoviglie, frigoriferi, forni e asciugatrici a domicilio in Trentino-Alto Adige. Sopralluogo fisso 70€ ovunque in provincia.",
+          "Riparazione professionale di lavatrici, lavastoviglie, frigoriferi, forni e asciugatrici a domicilio in Trentino-Alto Adige. Chiamata a domicilio: 70€ in Trentino, 80€ fino a Bolzano.",
       },
       {
         name: "keywords",
@@ -78,7 +77,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Sopralluogo fisso 70€ in tutto il Trentino. Lavatrici, frigoriferi, lavastoviglie, forni e asciugatrici a domicilio in 24–48 ore.",
+          "Chiamata a domicilio 70€ in Trentino, 80€ fino a Bolzano. Lavatrici, frigoriferi, lavastoviglie, forni e asciugatrici a domicilio in 24–48 ore.",
       },
       { property: "og:url", content: `${SITE.url}/` },
       { property: "og:image", content: `${SITE.url}/og-image.jpg` },
@@ -95,7 +94,7 @@ export const Route = createFileRoute("/")({
             "Riparazione e assistenza grandi elettrodomestici a domicilio in Trentino Alto Adige. Intervento entro 24 ore su lavatrice, frigorifero, lavastoviglie, asciugatrice, forno.",
           telephone: SITE.phoneTel,
           priceRange: "€€",
-          openingHours: "Mo-Fr 08:00-18:00, Sa 08:00-13:00",
+          openingHours: "We-Su 08:30-18:00",
           areaServed: [
             { "@type": "City", name: "Trento" },
             { "@type": "City", name: "Bolzano" },
@@ -140,7 +139,7 @@ export const Route = createFileRoute("/")({
           "@type": "WebPage",
           name: "Riparazione Elettrodomestici a Domicilio in Trentino | MIT",
           url: `${SITE.url}/`,
-          description: "Riparazione professionale di lavatrici, lavastoviglie, frigoriferi, forni e asciugatrici a domicilio in Trentino-Alto Adige. Sopralluogo fisso 70€ ovunque in provincia.",
+          description: "Riparazione professionale di lavatrici, lavastoviglie, frigoriferi, forni e asciugatrici a domicilio in Trentino-Alto Adige. Chiamata a domicilio: 70€ in Trentino, 80€ fino a Bolzano.",
           speakable: {
             "@type": "SpeakableSpecification",
             cssSelector: ["h1", "h2", ".faq-answer"],
@@ -148,7 +147,7 @@ export const Route = createFileRoute("/")({
           about: {
             "@type": "LocalBusiness",
             name: "Manutenzione Integrata Trentino",
-            description: "Riparazione elettrodomestici a domicilio con sopralluogo fisso 70€ in Trentino-Alto Adige. Paghi solo se ripariamo.",
+            description: "Riparazione elettrodomestici a domicilio con chiamata a domicilio a 70€ in Trentino. Paghi solo se ripariamo.",
           },
         }),
       },
@@ -160,7 +159,7 @@ export const Route = createFileRoute("/")({
 const HOME_FAQS = [
   {
     q: "Quanto costa riparare una lavatrice a Trento?",
-    a: "Il costo di riparazione di una lavatrice a Trento dipende dal tipo di guasto, ma con MIT il sopralluogo e la diagnosi hanno un costo fisso di 70€, valido in tutta la provincia di Trento e Alto Adige. Il preventivo finale viene fornito prima di procedere con qualsiasi intervento.",
+    a: "Il costo di riparazione di una lavatrice a Trento dipende dal tipo di guasto. Con MIT la chiamata a domicilio e la diagnosi hanno un costo fisso: 70€ in tutta la provincia di Trento, 80€ fino a Bolzano. Il preventivo viene comunicato sul posto se possibile, altrimenti dopo la ricerca dei ricambi in laboratorio.",
   },
   {
     q: "Conviene riparare o comprare un nuovo elettrodomestico?",
@@ -171,27 +170,26 @@ const HOME_FAQS = [
     a: "MIT garantisce interventi entro 24–48 ore dalla chiamata in tutta la zona Trentino-Alto Adige. L'intervento avviene direttamente a domicilio, senza necessità di trasportare l'elettrodomestico.",
   },
   {
-    q: "Il sopralluogo è fisso ovunque in Trentino?",
-    a: "Sì. Il sopralluogo e la prima diagnosi hanno un costo fisso di 70€ in tutta la provincia di Trento e Alto Adige, senza costi aggiuntivi per la distanza. Se procedi con la riparazione, questo importo viene scalato dal preventivo finale.",
+    q: "La chiamata a domicilio ha un prezzo fisso?",
+    a: "Sì. La chiamata a domicilio e la prima diagnosi hanno un costo fisso di 70€ in tutta la provincia di Trento, senza costi aggiuntivi per la distanza. Per interventi fino a Bolzano città il costo è di 80€.",
   },
   {
     q: "La riparazione è coperta da garanzia?",
-    a: "Sì, ogni intervento è coperto da garanzia su manodopera e ricambi installati. In caso di recidiva dello stesso guasto entro il periodo di garanzia, il secondo intervento è gratuito.",
+    a: "Sì, ogni intervento è coperto da garanzia di 3 mesi su manodopera e ricambi installati. In caso di recidiva dello stesso guasto entro il periodo di garanzia, il secondo intervento è gratuito.",
   },
   {
     q: "Come si contatta MIT per una riparazione in Trentino?",
-    a: "Puoi contattare Manutenzione Integrata Trentino (MIT) telefonando al 339 507 8587, inviando un messaggio WhatsApp allo stesso numero, oppure compilando il modulo online su questo sito. L'orario di disponibilità è lunedì–venerdì 8:00–18:00 e sabato 8:00–13:00.",
+    a: "Puoi contattare Manutenzione Integrata Trentino (MIT) tramite WhatsApp al 351 498 4550 o compilando il modulo online su questo sito. Siamo disponibili via WhatsApp o per urgenze mercoledì–domenica 8:30–18:00. Il lunedì e il martedì siamo raggiungibili solo via WhatsApp.",
   },
 ];
 
 const SERVICES_GRID = [
   { icon: Wrench,        title: "Riparazione",           desc: "Lavatrici, lavastoviglie, frigoriferi, forni, asciugatrici" },
   { icon: Hammer,        title: "Installazione",          desc: "Messa in opera, collaudo e allaccio di nuovi elettrodomestici" },
-  { icon: Recycle,       title: "Smaltimento RAEE",       desc: "Ritiro e smaltimento certificato degli apparecchi dismessi" },
-  { icon: Snowflake,     title: "Climatizzazione",        desc: "Installazione e manutenzione climatizzatori e sistemi split" },
+  { icon: Recycle,       title: "Smaltimento RAEE",       desc: "Ritiro e smaltimento in concomitanza di installazione o sostituzione" },
   { icon: ShieldCheck,   title: "Post-Intervento",        desc: "Assistenza garantita dopo ogni riparazione effettuata" },
   { icon: CalendarCheck, title: "Manutenzione",           desc: "Check-up periodici per prolungare la vita degli elettrodomestici" },
-  { icon: Wind,          title: "Pulizia Asciugatrici",   desc: "Pulizia profonda condensatore, filtri e condotti" },
+  { icon: Wind,          title: "Pulizia Asciugatrici",   desc: "Pulizia professionale in laboratorio. Ritiro e riconsegna entro 5 giorni" },
 ];
 
 const TRUST_ITEMS = [
@@ -201,7 +199,7 @@ const TRUST_ITEMS = [
 ];
 
 const REASONS = [
-  "Sopralluogo e diagnosi a prezzo fisso: <strong>70€ ovunque in Trentino</strong>",
+  "Chiamata a domicilio a prezzo fisso: <strong>70€ in Trentino · 80€ fino a Bolzano</strong>",
   "Tecnici certificati e qualificati",
   "Ricambi originali garantiti",
   "Diagnosi onesta: se non conviene riparare, te lo diciamo",
@@ -212,9 +210,9 @@ const REASONS = [
 ];
 
 const CITIES = [
-  "Trento", "Rovereto", "Bolzano", "Merano", "Pergine Valsugana",
-  "Riva del Garda", "Arco", "Cles", "Borgo Valsugana", "Lavis",
-  "Tione", "Bressanone", "Mori", "Levico Terme", "Mezzolombardo",
+  "Trento", "Rovereto", "Bolzano", "Pergine Valsugana", "Riva del Garda",
+  "Arco", "Cles", "Borgo Valsugana", "Lavis", "Tione",
+  "Cavalese", "Salorno", "Egna", "Mori", "Levico Terme", "Mezzolombardo",
 ];
 
 type QCFormValues = Pick<ContactFormData, "name" | "phone" | "address" | "appliance" | "problem" | "honeypot">;
@@ -261,8 +259,8 @@ function QuickContactForm() {
           <h3 className="font-display font-bold text-lg">Richiesta inviata!</h3>
         </div>
         <p className="text-sm text-foreground/80">
-          Grazie. Ti ricontattiamo entro poche ore per concordare il sopralluogo.
-          Puoi anche chiamarci subito al{" "}
+          Grazie. Ti ricontattiamo entro poche ore per concordare la chiamata a domicilio.
+          Puoi anche scriverci su WhatsApp o chiamarci al{" "}
           <a href={`tel:${SITE.phoneTel}`} className="font-semibold text-primary">
             {SITE.phoneDisplay}
           </a>
@@ -355,16 +353,26 @@ function QuickContactForm() {
         />
         {errors.problem && <p className="mt-1 text-xs text-destructive" role="alert">{errors.problem.message}</p>}
       </div>
-      <div className="sm:col-span-2 flex items-start gap-2">
-        <Checkbox
-          id="qc-privacy"
-          required
-          className="mt-1"
-          onCheckedChange={(c) => setValue("privacy", Boolean(c), { shouldValidate: true })}
+      <div className="sm:col-span-2">
+        <div className="flex items-start gap-2">
+          <Checkbox
+            id="qc-privacy"
+            className={`mt-1 ${errors.privacy ? "border-destructive" : ""}`}
+            onCheckedChange={(c) => setValue("privacy", c === true, { shouldValidate: true })}
+          />
+          <Label htmlFor="qc-privacy" className="text-sm font-normal text-foreground/75">
+            Accetto la <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a> *
+          </Label>
+        </div>
+        <input
+          type="hidden"
+          {...register("privacy", {
+            validate: (v) => v === true || "Devi accettare la Privacy Policy per continuare",
+          })}
         />
-        <Label htmlFor="qc-privacy" className="text-sm font-normal text-foreground/75">
-          Accetto la <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a> *
-        </Label>
+        {errors.privacy && (
+          <p className="mt-1 text-xs text-destructive" role="alert">{errors.privacy.message as string}</p>
+        )}
       </div>
       {serverError && (
         <div role="alert" className="sm:col-span-2 flex items-start gap-2 rounded-lg bg-destructive/10 border border-destructive/30 p-3 text-xs text-destructive">
@@ -413,9 +421,9 @@ function HomePage() {
             </h1>
             <p className="mt-5 text-lg text-foreground/75 max-w-xl leading-relaxed">
               Lavatrici, lavastoviglie, frigoriferi, forni e asciugatrici.
-              Sopralluogo e diagnosi a prezzo fisso:{" "}
-              <strong className="text-secondary">70€</strong> ovunque in
-              Trentino-Alto Adige, senza sovrapprezzi per la distanza.
+              Chiamata a domicilio a prezzo fisso:{" "}
+              <strong className="text-secondary">70€ in Trentino · 80€ fino a Bolzano</strong>,
+              senza sovrapprezzi per la distanza.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-md animate-mit-pulse-ring">
@@ -508,11 +516,10 @@ function HomePage() {
                   <Sparkles className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
                   <div>
                     <p className="font-display font-bold text-secondary">
-                      Sopralluogo fisso: 70€ ovunque
+                      Chiamata a domicilio: 70€ in Trentino · 80€ fino a Bolzano
                     </p>
                     <p className="mt-1 text-sm text-foreground/75">
-                      Da Trento a Bolzano, dalle valli ai centri minori — stesso
-                      prezzo, nessun sovrapppezzo per la distanza.
+                      In tutta la provincia di Trento — stesso prezzo, nessun sovrapppezzo per la distanza. Per Bolzano città il costo è di 80€.
                     </p>
                   </div>
                 </div>
@@ -686,7 +693,7 @@ function HomePage() {
               {/* Price badge */}
               <div className="mt-6 mb-8 inline-flex items-center gap-2 rounded-full bg-secondary text-green-soft px-4 py-2 text-sm font-semibold">
                 <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
-                Sopralluogo e diagnosi a 70€ fissi — ovunque in Trentino
+                Chiamata a domicilio: 70€ in Trentino · 80€ fino a Bolzano
               </div>
 
               {/* Groups */}
@@ -751,7 +758,7 @@ function HomePage() {
                 {SITE.phoneDisplay}
               </a>
               <p className="mt-2 mb-5 text-sm text-foreground/70 leading-relaxed">
-                Chiama o scrivi su WhatsApp per fissare il sopralluogo. Nessun anticipo richiesto.
+                Chiama o scrivi su WhatsApp per fissare la chiamata a domicilio. Nessun anticipo richiesto.
               </p>
 
               {/* CTAs */}
@@ -781,7 +788,7 @@ function HomePage() {
                 </li>
                 <li className="flex items-center gap-2 text-xs text-secondary">
                   <MapPin className="h-[15px] w-[15px] text-secondary shrink-0" />
-                  70€ fissi per il sopralluogo, ovunque in Trentino
+                  70€ chiamata in Trentino · 80€ fino a Bolzano
                 </li>
               </ul>
             </div>
@@ -879,7 +886,7 @@ function HomePage() {
             </h2>
             <p className="mt-3 text-primary-foreground/85 max-w-xl mx-auto text-lg">
               Chiamaci adesso. In Trentino-Alto Adige, ovunque tu sia, interveniamo
-              allo stesso prezzo: <strong>70€</strong> per sopralluogo e diagnosi.
+              allo stesso prezzo: <strong>70€</strong> per chiamata e diagnosi in Trentino, <strong>80€</strong> fino a Bolzano.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-md">
@@ -894,7 +901,7 @@ function HomePage() {
               </Button>
             </div>
             <p className="mt-5 text-sm text-primary-foreground/70">
-              Lun–Ven 8:00–18:00 · Sab 8:00–13:00
+              Mer–Dom 8:30–18:00 · Lun–Mar solo WhatsApp
             </p>
           </AnimateIn>
         </div>

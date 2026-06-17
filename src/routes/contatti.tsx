@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   Clock,
   Loader2,
+  Mail,
   MapPin,
   MessageCircle,
   Phone,
@@ -39,13 +40,13 @@ export const Route = createFileRoute("/contatti")({
       {
         name: "description",
         content:
-          "Contatta MIT per riparazione elettrodomestici a domicilio in Trentino-Alto Adige. Telefono, WhatsApp o modulo online: interveniamo in 24–48 ore. Sopralluogo fisso 70€.",
+          "Contatta MIT per riparazione elettrodomestici a domicilio in Trentino-Alto Adige. WhatsApp o modulo online: interveniamo in 24–48 ore. Chiamata a domicilio: 70€ in Trentino, 80€ fino a Bolzano.",
       },
       { property: "og:title", content: "Contatti — MIT Trentino" },
       {
         property: "og:description",
         content:
-          "Telefono, WhatsApp o modulo online. Sopralluogo fisso 70€ in tutta la provincia di Trento e Alto Adige.",
+          "WhatsApp o modulo online. Chiamata a domicilio: 70€ in tutta la provincia di Trento, 80€ fino a Bolzano.",
       },
       { property: "og:url", content: `${SITE.url}/contatti` },
       { property: "og:image", content: `${SITE.url}/og-image.jpg` },
@@ -59,7 +60,7 @@ export const Route = createFileRoute("/contatti")({
           "@type": "ContactPage",
           name: "Contatta MIT — Riparazione Elettrodomestici Trentino",
           description:
-            "Richiedi un intervento a domicilio. Sopralluogo fisso 70€ ovunque in Trentino-Alto Adige.",
+            "Richiedi un intervento a domicilio. Chiamata a domicilio: 70€ in Trentino, 80€ fino a Bolzano.",
           url: `${SITE.url}/contatti`,
           breadcrumb: {
             "@type": "BreadcrumbList",
@@ -87,13 +88,13 @@ export const Route = createFileRoute("/contatti")({
                 "@type": "HowToStep",
                 position: 2,
                 name: "Ricevi la conferma",
-                text: "Ti richiamiamo entro poche ore per concordare data e orario del sopralluogo.",
+                text: "Ti ricontattiamo entro poche ore per concordare data e orario della chiamata a domicilio.",
               },
               {
                 "@type": "HowToStep",
                 position: 3,
-                name: "Sopralluogo a domicilio",
-                text: "Il tecnico arriva a casa tua, esegue la diagnosi e fornisce il preventivo (70€ fisso).",
+                name: "Chiamata a domicilio",
+                text: "Il tecnico arriva a casa tua, esegue la diagnosi e fornisce il preventivo (chiamata 70€ in Trentino, 80€ fino a Bolzano).",
               },
               {
                 "@type": "HowToStep",
@@ -165,8 +166,8 @@ function ContattiForm() {
           <h3 className="font-display font-bold text-lg">Richiesta inviata!</h3>
         </div>
         <p className="text-sm text-foreground/80">
-          Grazie. Ti ricontattiamo entro poche ore per concordare il sopralluogo.
-          Puoi anche chiamarci direttamente al{" "}
+          Grazie. Ti ricontattiamo entro poche ore per concordare la chiamata a domicilio.
+          Puoi anche scriverci su WhatsApp o chiamarci al{" "}
           <a href={`tel:${SITE.phoneTel}`} className="font-semibold text-primary">
             {SITE.phoneDisplay}
           </a>
@@ -323,25 +324,35 @@ function ContattiForm() {
         )}
       </div>
 
-      <div className="sm:col-span-2 flex items-start gap-2">
-        <Checkbox
-          id="cnt-privacy"
-          required
-          className="mt-1"
-          onCheckedChange={(checked) =>
-            setValue("privacy", Boolean(checked), { shouldValidate: true })
-          }
+      <div className="sm:col-span-2">
+        <div className="flex items-start gap-2">
+          <Checkbox
+            id="cnt-privacy"
+            className={`mt-1 ${errors.privacy ? "border-destructive" : ""}`}
+            onCheckedChange={(checked) =>
+              setValue("privacy", checked === true, { shouldValidate: true })
+            }
+          />
+          <Label
+            htmlFor="cnt-privacy"
+            className="text-sm font-normal text-foreground/80"
+          >
+            Ho letto e accetto la{" "}
+            <a href="/privacy-policy" className="text-primary hover:underline">
+              Privacy Policy
+            </a>{" "}
+            *
+          </Label>
+        </div>
+        <input
+          type="hidden"
+          {...register("privacy", {
+            validate: (v) => v === true || "Devi accettare la Privacy Policy per continuare",
+          })}
         />
-        <Label
-          htmlFor="cnt-privacy"
-          className="text-sm font-normal text-foreground/80"
-        >
-          Ho letto e accetto la{" "}
-          <a href="/privacy-policy" className="text-primary hover:underline">
-            Privacy Policy
-          </a>{" "}
-          *
-        </Label>
+        {errors.privacy && (
+          <p className="mt-1 text-xs text-destructive" role="alert">{errors.privacy.message as string}</p>
+        )}
       </div>
 
       {serverError && (
@@ -390,8 +401,8 @@ function ContattiPage() {
           </h1>
           <p className="mt-3 text-foreground/70 max-w-2xl mx-auto">
             Siamo pronti ad aiutarti. Interveniamo in 24–48 ore in tutto il
-            Trentino-Alto Adige. Sopralluogo fisso{" "}
-            <strong className="text-secondary">70€</strong> ovunque.
+            Trentino. Chiamata a domicilio{" "}
+            <strong className="text-secondary">70€ in Trentino · 80€ fino a Bolzano</strong>.
           </p>
         </div>
       </section>
@@ -450,6 +461,16 @@ function ContattiPage() {
                   <MessageCircle className="h-4 w-4" /> Scrivi su WhatsApp
                 </a>
               </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="mt-2.5 w-full font-semibold"
+              >
+                <a href={SITE.mailtoDefault}>
+                  <Mail className="h-4 w-4" /> Scrivi una Email
+                </a>
+              </Button>
             </div>
 
             {/* Price callout */}
@@ -458,12 +479,27 @@ function ContattiPage() {
                 <Sparkles className="h-3.5 w-3.5 text-accent" /> Prezzo fisso
               </span>
               <h3 className="mt-3 font-display font-bold text-xl text-secondary">
-                Sopralluogo e diagnosi: 70€
+                Chiamata a domicilio e diagnosi
               </h3>
               <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
-                Stesso prezzo in tutta la provincia, nessun costo aggiuntivo per
-                la distanza. Se procedi con la riparazione, i 70€ vengono scalati
-                dal preventivo finale.
+                <strong>70€</strong> fissi in tutta la provincia di Trento, nessun costo
+                aggiuntivo per la distanza. <strong>80€</strong> per interventi fino a Bolzano città.
+              </p>
+            </div>
+
+            {/* Payments */}
+            <div className="rounded-2xl bg-white border border-border p-6 shadow-soft">
+              <h3 className="font-display font-bold text-secondary mb-3">
+                Pagamenti accettati
+              </h3>
+              <ul className="space-y-1.5 text-sm text-foreground/80">
+                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />Contanti</li>
+                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />Bonifico bancario istantaneo</li>
+                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />Carta di credito / Bancomat</li>
+                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />PayPal</li>
+              </ul>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Pagamento a intervento completato. Viene rilasciato <strong>scontrino fiscale</strong> cartaceo o digitale. Su richiesta è possibile ricevere <strong>fattura</strong>.
               </p>
             </div>
 
@@ -474,11 +510,11 @@ function ContattiPage() {
               </h3>
               <ol className="space-y-2 text-sm text-foreground/80">
                 {[
-                  "Ti chiamiamo entro poche ore",
-                  "Concordiamo data e orario del sopralluogo",
+                  "Ti ricontattiamo entro poche ore",
+                  "Concordiamo data e orario della chiamata a domicilio",
                   "Il tecnico arriva a casa tua",
-                  "Diagnosi e preventivo sul posto (70€)",
-                  "Intervento con ricambi originali garantiti",
+                  "Diagnosi e preventivo (sul posto o dopo ricerca ricambi)",
+                  "Intervento con ricambi originali o sostitutivi garantiti",
                 ].map((step, i) => (
                   <li key={i} className="flex gap-2.5 items-start">
                     <span className="h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shrink-0">

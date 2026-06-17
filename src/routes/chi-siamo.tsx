@@ -51,7 +51,7 @@ const values = [
   {
     icon: Handshake,
     title: "Trasparenza Totale",
-    desc: "Preventivo fisso, nessuna sorpresa. Il prezzo del sopralluogo è 70€ ovunque in Trentino-Alto Adige — da Trento a Bolzano, senza sovrapprezzi per la distanza.",
+    desc: "Preventivo fisso, nessuna sorpresa. Il prezzo della chiamata è 70€ in provincia di Trento — 80€ fino a Bolzano, senza sovrapprezzi per la distanza.",
   },
   {
     icon: Mountain,
@@ -91,8 +91,8 @@ function ChiSiamoPage() {
             </p>
             <p>
               Veniamo da una tradizione tecnica che mette al primo posto il cliente:
-              preventivi chiari, prezzo fisso del sopralluogo a{" "}
-              <strong>70€</strong> e la promessa che{" "}
+              preventivi chiari, prezzo fisso della chiamata a domicilio:{" "}
+              <strong>70€ in Trentino, 80€ fino a Bolzano</strong> — e la promessa che{" "}
               <strong>paghi solo se ripariamo</strong>. Niente sorprese, niente
               sovrapprezzi per la distanza.
             </p>

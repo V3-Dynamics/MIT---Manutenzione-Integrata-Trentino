@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Riparazione professionale di elettrodomestici a domicilio in Trentino-Alto Adige. Sopralluogo fisso 70€. Paghi solo se ripariamo.",
+          "Riparazione professionale di elettrodomestici a domicilio in Trentino-Alto Adige. Chiamata a domicilio: 70€ in Trentino, 80€ fino a Bolzano. Paghi solo se ripariamo.",
       },
       { name: "author", content: "Manutenzione Integrata Trentino" },
       { name: "geo.region", content: "IT-TN" },
@@ -121,7 +121,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           legalName: "Manutenzione Integrata Trentino",
           vatID: "IT02830530222",
           description:
-            "Riparazione e manutenzione di grandi elettrodomestici a domicilio in Trentino-Alto Adige. Sopralluogo fisso 70€. Intervento entro 24–48 ore. Paghi solo se ripariamo.",
+            "Riparazione e manutenzione di grandi elettrodomestici a domicilio in Trentino-Alto Adige. Chiamata a domicilio: 70€ in Trentino, 80€ fino a Bolzano. Intervento entro 24–48 ore. Paghi solo se ripariamo.",
           url: SITE.url,
           telephone: SITE.phoneTel,
           email: SITE.email,

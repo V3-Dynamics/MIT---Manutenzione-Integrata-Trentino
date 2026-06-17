@@ -82,7 +82,7 @@ export const sendContactEmail = createServerFn({ method: "POST" })
   <tr><th>Elettrodomestico</th><td>${escapeHtml(data.appliance)}</td></tr>
   <tr><th>Problema</th><td>${escapeHtml(data.problem).replace(/\n/g, "<br>")}</td></tr>
 </table>
-<p class="footer">Inviato dal form di contatto su www.mantenzioneintegrata.it</p>
+<p class="footer">Inviato dal form di contatto su www.mantenzioneintegrata.it — rispondere a questo messaggio per contattare il cliente.</p>
 </body>
 </html>`;
 
@@ -96,7 +96,7 @@ export const sendContactEmail = createServerFn({ method: "POST" })
       },
       body: JSON.stringify({
         from: "MIT Sito Web <noreply@mantenzioneintegrata.it>",
-        to: ["info@mantenzioneintegrata.it"],
+        to: ["info@mittrentino.it"],
         reply_to: replyTo,
         subject: `Nuova richiesta: ${data.appliance} — ${data.name} (${data.address})`,
         html,

@@ -6,7 +6,6 @@ import {
   Phone,
   Recycle,
   ShieldCheck,
-  Snowflake,
   Wind,
   Wrench,
   ArrowRight,
@@ -23,7 +22,7 @@ export const Route = createFileRoute("/servizi")({
       {
         name: "description",
         content:
-          "Riparazione, installazione, smaltimento RAEE, climatizzazione e manutenzione programmata di grandi elettrodomestici in tutto il Trentino-Alto Adige. Sopralluogo fisso 70€.",
+          "Riparazione, installazione, smaltimento RAEE e manutenzione programmata di grandi elettrodomestici in tutto il Trentino. Chiamata a domicilio: 70€ in Trentino, 80€ fino a Bolzano.",
       },
       {
         name: "keywords",
@@ -34,7 +33,7 @@ export const Route = createFileRoute("/servizi")({
       {
         property: "og:description",
         content:
-          "Assistenza completa per lavatrici, frigoriferi, forni, lavastoviglie e climatizzatori. Sopralluogo fisso 70€ ovunque in Trentino-Alto Adige.",
+          "Assistenza completa per lavatrici, frigoriferi, forni, lavastoviglie e asciugatrici. Chiamata a domicilio: 70€ in Trentino, 80€ fino a Bolzano.",
       },
       { property: "og:url", content: `${SITE.url}/servizi` },
       { property: "og:image", content: `${SITE.url}/og-image.jpg` },
@@ -81,7 +80,7 @@ const SERVICES = [
     icon: Wrench,
     title: "Riparazione Elettrodomestici",
     subtitle: "Il cuore del nostro servizio",
-    desc: "Diagnosi e riparazione professionale di lavatrici, lavastoviglie, frigoriferi, forni, piani cottura e asciugatrici. Intervento a domicilio in 24–48 ore in tutta la regione. Ricambi originali garantiti. Il sopralluogo ha un costo fisso di 70€ ovunque in Trentino-Alto Adige.",
+    desc: "Diagnosi e riparazione professionale di lavatrici, lavastoviglie, frigoriferi, forni, piani cottura e asciugatrici. Intervento a domicilio in 24–48 ore in tutta la regione. Ricambi originali e sostitutivi garantiti. La chiamata a domicilio ha un costo fisso di 70€ in Trentino, 80€ fino a Bolzano.",
     keywords: ["Lavatrice non centrifuga", "Frigorifero non raffredda", "Lavastoviglie non scarica", "Forno non scalda", "Piano cottura rotto"],
     bullets: ["Guasti elettrici e meccanici", "Perdite d'acqua", "Motori e pompe", "Schede elettroniche", "Resistenze e termostati", "Guarnizioni e cuscinetti"],
   },
@@ -97,17 +96,9 @@ const SERVICES = [
     icon: Recycle,
     title: "Trasporto e Smaltimento RAEE",
     subtitle: "Un servizio etico per l'ambiente",
-    desc: "Ritiriamo il tuo vecchio elettrodomestico e lo consegniamo ai centri di raccolta RAEE autorizzati, nel rispetto della normativa europea. Quando un apparecchio non è più riparabile, lo smaltimento responsabile è la scelta giusta — non la discarica abusiva.",
+    desc: "Ritiriamo il tuo vecchio elettrodomestico e lo consegniamo ai centri di raccolta RAEE autorizzati. Il servizio è disponibile in concomitanza con l'installazione o la sostituzione del vecchio elettrodomestico con uno nuovo. Smaltimento etico, tracciabile e nel rispetto della normativa europea.",
     keywords: ["Smaltimento lavatrice vecchia", "RAEE Trentino", "Ritiro elettrodomestici"],
     bullets: ["Ritiro a domicilio", "Smaltimento certificato", "Conformità normativa RAEE", "Tracciabilità documentata"],
-  },
-  {
-    icon: Snowflake,
-    title: "Climatizzazione e Frigorista",
-    subtitle: "Tecnici certificati F-Gas",
-    desc: "Installazione, manutenzione stagionale e riparazione di climatizzatori e sistemi di raffreddamento per uso domestico in tutta la provincia di Trento e nelle aree principali dell'Alto Adige. I nostri tecnici sono certificati F-Gas.",
-    keywords: ["Climatizzatore Trento", "Condizionatore Bolzano", "Split system Trentino"],
-    bullets: ["Climatizzatori split e multi-split", "Manutenzione stagionale", "Ricarica gas refrigerante", "Installazione nuovi impianti"],
   },
   {
     icon: ShieldCheck,
@@ -129,7 +120,7 @@ const SERVICES = [
     icon: Wind,
     title: "Pulizia Asciugatrici",
     subtitle: "Sicurezza ed efficienza garantite",
-    desc: "Pulizia professionale di asciugatrici: condensatore, filtri, condotti e resistenze. La peluria accumulata nel tempo riduce l'efficienza e può causare surriscaldamento. Una pulizia professionale annuale migliora le prestazioni e previene rischi.",
+    desc: "Pulizia professionale di asciugatrici: condensatore, filtri, condotti e resistenze. Le asciugatrici vengono ritirate presso il laboratorio, sottoposte al processo di pulizia/lavaggio professionale con prove finali di funzionamento e riconsegnate entro un massimo di 5 giorni. Una manutenzione annuale migliora le prestazioni e previene rischi di surriscaldamento.",
     keywords: ["Pulizia asciugatrice Trento", "Manutenzione asciugatrice Bolzano", "Asciugatrice lenta"],
     bullets: ["Smontaggio e ispezione", "Pulizia profonda condensatore", "Pulizia condotti e resistenze", "Test di funzionamento finale"],
   },
@@ -147,7 +138,7 @@ function ServiziPage() {
           </h1>
           <p className="mt-3 text-foreground/70 max-w-2xl mx-auto">
             Assistenza completa per i tuoi grandi elettrodomestici in Trentino-Alto Adige.
-            Sopralluogo fisso <strong>70€</strong> ovunque — nessun sovrappprezzo per la distanza.
+            Chiamata a domicilio: <strong>70€</strong> in Trentino · <strong>80€</strong> fino a Bolzano — nessun sovrappprezzo per la distanza.
           </p>
         </div>
       </section>
@@ -199,7 +190,7 @@ function ServiziPage() {
                 Hai bisogno di assistenza?
               </h2>
               <p className="mt-2 text-primary-foreground/85 max-w-xl">
-                Stesso prezzo ovunque in Trentino-Alto Adige — sopralluogo e diagnosi a 70€ fissi.
+                Chiamata a domicilio e diagnosi: 70€ in Trentino · 80€ fino a Bolzano.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">

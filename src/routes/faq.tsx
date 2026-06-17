@@ -70,11 +70,11 @@ const FAQ_CATEGORIES = [
     items: [
       {
         q: "Quanto costa riparare una lavatrice a Trento?",
-        a: "Il costo di riparazione di una lavatrice a Trento dipende dal tipo di guasto. Il sopralluogo e la prima diagnosi hanno un costo fisso di 70€ valido in tutta la provincia di Trento e Alto Adige. Il preventivo finale per la riparazione viene fornito prima di procedere con qualsiasi intervento. Se non si procede, si paga solo il sopralluogo. Se si procede, il costo del sopralluogo viene scalato dal totale.",
+        a: "Il costo di riparazione dipende dal tipo di guasto. La chiamata a domicilio e la prima diagnosi hanno un costo fisso di 70€ in provincia di Trento, 80€ fino a Bolzano. Il preventivo viene comunicato sul posto se possibile, altrimenti dopo la ricerca dei ricambi in laboratorio — per offrirti la soluzione migliore al prezzo più conveniente.",
       },
       {
-        q: "Qual è il costo del sopralluogo in tutta la provincia di Trento?",
-        a: "Il sopralluogo e la prima diagnosi hanno un costo fisso di 70€ in tutta la provincia di Trento e Alto Adige, senza costi aggiuntivi per la distanza o la zona. Questo vale per Trento, Rovereto, Bolzano, Merano, Pergine Valsugana, Riva del Garda, Bressanone e tutti i comuni della regione.",
+        q: "Qual è il costo della chiamata a domicilio?",
+        a: "La chiamata a domicilio e la prima diagnosi hanno un costo fisso di 70€ in tutta la provincia di Trento, senza costi aggiuntivi per la distanza o la zona. Per interventi nella provincia di Bolzano, il costo è di 80€ fino a Bolzano città. Questo vale per Trento, Rovereto, Pergine Valsugana, Riva del Garda, Cavalese, Salorno, Egna, Cles e tutti i comuni della provincia di Trento.",
       },
       {
         q: "Conviene riparare o comprare un elettrodomestico nuovo?",
@@ -82,7 +82,15 @@ const FAQ_CATEGORIES = [
       },
       {
         q: "Devo pagare anche se non riescono a riparare il mio elettrodomestico?",
-        a: "Il costo fisso di 70€ copre il sopralluogo e la diagnosi, indipendentemente dall'esito. Se il tecnico valuta che la riparazione non è possibile o non è conveniente, ti informerà prima di procedere. Non vengono mai addebitati costi nascosti o imprevisti.",
+        a: "Il costo fisso della chiamata a domicilio copre la visita e la diagnosi, indipendentemente dall'esito. Se il tecnico valuta che la riparazione non è possibile o non è conveniente, ti informerà prima di procedere. Non vengono mai addebitati costi nascosti o imprevisti.",
+      },
+      {
+        q: "Quando ricevo il preventivo?",
+        a: "Il preventivo viene comunicato il prima possibile: se i ricambi necessari sono già noti, viene fornito direttamente durante la chiamata a domicilio. In caso contrario, il tecnico rientra in laboratorio, esegue la ricerca dei ricambi — anche tra alternative sostitutive — e comunica il preventivo appena possibile, spesso offrendo una soluzione più economica.",
+      },
+      {
+        q: "Quali metodi di pagamento accettate?",
+        a: "MIT accetta contanti, bonifico bancario istantaneo, carta di credito/debito e PayPal. Il pagamento avviene a intervento completato, non in anticipo. Per ogni intervento viene rilasciato uno scontrino fiscale cartaceo o digitale. Su richiesta è possibile ricevere anche fattura.",
       },
     ],
   },
@@ -129,7 +137,7 @@ const FAQ_CATEGORIES = [
     items: [
       {
         q: "La riparazione è coperta da garanzia?",
-        a: "Sì, ogni intervento è coperto da garanzia su manodopera e ricambi installati. In caso di recidiva dello stesso guasto entro il periodo di garanzia, il secondo intervento è gratuito. Usiamo esclusivamente ricambi originali o compatibili certificati.",
+        a: "Sì, ogni intervento è coperto da garanzia di 3 mesi su manodopera e ricambi installati. In caso di recidiva dello stesso guasto entro il periodo di garanzia, il secondo intervento è gratuito. Usiamo ricambi originali o sostitutivi certificati di qualità equivalente.",
       },
       {
         q: "Offrite assistenza post-intervento?",
@@ -142,15 +150,11 @@ const FAQ_CATEGORIES = [
     items: [
       {
         q: "Come funziona il servizio di smaltimento RAEE in Trentino?",
-        a: "MIT offre un servizio certificato di ritiro e smaltimento RAEE (Rifiuti di Apparecchiature Elettriche ed Elettroniche). Quando un elettrodomestico non è più riparabile, lo ritiriamo e lo consegniamo ai centri di smaltimento autorizzati, nel rispetto della normativa europea e locale. È un servizio etico che evita lo smaltimento irregolare.",
+        a: "MIT offre un servizio certificato di ritiro e smaltimento RAEE (Rifiuti di Apparecchiature Elettriche ed Elettroniche). Il servizio è disponibile in concomitanza con l'installazione o la sostituzione del vecchio elettrodomestico: quando porti il nuovo, ritiriamo il vecchio e lo consegniamo ai centri di smaltimento autorizzati nel rispetto della normativa europea.",
       },
       {
-        q: "Fate la pulizia e manutenzione delle asciugatrici?",
-        a: "Sì, MIT esegue la pulizia professionale e la manutenzione programmata delle asciugatrici, inclusa la pulizia del condensatore, del filtro, dei condotti e delle resistenze. Una manutenzione regolare aumenta l'efficienza energetica, riduce i consumi e prolunga la vita dell'apparecchio prevenendo rischi di surriscaldamento.",
-      },
-      {
-        q: "Offrite servizi di climatizzazione e frigorista in Trentino?",
-        a: "MIT offre servizi professionali di climatizzazione e refrigerazione per uso domestico in tutto il Trentino-Alto Adige: installazione, manutenzione stagionale e riparazione di climatizzatori split e multi-split, con tecnici certificati F-Gas.",
+        q: "Fate la pulizia e il lavaggio professionale delle asciugatrici?",
+        a: "Sì, MIT esegue la pulizia e il lavaggio professionale delle asciugatrici: condensatore, filtri, condotti e resistenze. Le asciugatrici vengono ritirate a domicilio, portate in laboratorio per il processo completo di pulizia/lavaggio, sottoposte a prove finali di funzionamento e poi riconsegnate. Il tempo massimo stimato è di 5 giorni. Una manutenzione annuale aumenta l'efficienza e previene rischi di surriscaldamento.",
       },
     ],
   },
@@ -158,12 +162,12 @@ const FAQ_CATEGORIES = [
     category: "Aree e copertura",
     items: [
       {
-        q: "Coprite anche Bolzano e l'Alto Adige?",
-        a: "Sì, operiamo in tutta la provincia di Trento (Trento, Rovereto, Pergine Valsugana, Riva del Garda, Cles, Borgo Valsugana, Arco e molti altri comuni) e nelle principali aree della provincia di Bolzano (Bolzano città, Merano, Laives, Bressanone, Egna). Il costo del sopralluogo è fisso a 70€ indipendentemente dalla distanza.",
+        q: "Coprite anche Bolzano?",
+        a: "Operiamo principalmente in tutta la provincia di Trento (Trento, Rovereto, Pergine Valsugana, Riva del Garda, Cles, Borgo Valsugana, Arco, Cavalese, Salorno, Egna e molti altri comuni). Possiamo intervenire anche fino a Bolzano città con un costo di chiamata di 80€.",
       },
       {
         q: "Riparate elettrodomestici anche nelle valli del Trentino?",
-        a: "Sì, MIT copre tutto il territorio trentino incluse le valli: Val di Non, Val di Sole, Val Rendena, Val di Cembra, Valsugana, Valle del Sarca, Giudicarie e Primiero. Stesso prezzo, stesso servizio ovunque — 70€ per sopralluogo e diagnosi.",
+        a: "Sì, MIT copre tutto il territorio trentino incluse le valli: Val di Non, Val di Sole, Val Rendena, Val di Cembra, Valsugana, Valle del Sarca, Giudicarie e Primiero. Stesso prezzo ovunque in Trentino — 70€ per chiamata e diagnosi.",
       },
     ],
   },
@@ -172,19 +176,15 @@ const FAQ_CATEGORIES = [
     items: [
       {
         q: "Come si prenota un intervento con MIT in Trentino?",
-        a: "Puoi prenotare in tre modi: telefonando al 339 507 8587 (Lun–Ven 8–18, Sab 8–13), inviando un messaggio WhatsApp allo stesso numero, oppure compilando il modulo di contatto su questo sito. Risponderemo entro poche ore per concordare data e orario del sopralluogo.",
+        a: "Puoi prenotare inviando un messaggio WhatsApp al 351 498 4550 oppure compilando il modulo di contatto su questo sito. Siamo disponibili via WhatsApp mercoledì–domenica 8:30–18:00. Il lunedì e il martedì siamo raggiungibili solo via WhatsApp. Risponderemo entro poche ore per concordare data e orario della chiamata a domicilio.",
       },
       {
-        q: "MIT è disponibile anche il sabato?",
-        a: "Sì, MIT è disponibile anche il sabato mattina. Gli orari di operatività sono: lunedì–venerdì dalle 8:00 alle 18:00, sabato dalle 8:00 alle 13:00. Per urgenze fuori orario, scrivere via WhatsApp e saremo ricontattati appena disponibili.",
-      },
-      {
-        q: "Quali metodi di pagamento accettate?",
-        a: "MIT accetta i principali metodi di pagamento: contanti, bonifico bancario e pagamento con carta o bancomat direttamente a domicilio. Il pagamento avviene a intervento completato, non in anticipo.",
+        q: "Quali sono gli orari di MIT?",
+        a: "Siamo operativi mercoledì–domenica dalle 8:30 alle 18:00 per interventi e chiamate. Il lunedì e il martedì siamo disponibili solo via WhatsApp. Per urgenze fuori orario, scrivici su WhatsApp e ti risponderemo appena possibile.",
       },
       {
         q: "Devo essere presente a casa durante la riparazione?",
-        a: "Sì, è necessaria la presenza di un adulto durante il sopralluogo e la riparazione. Il tecnico ha bisogno di accedere all'elettrodomestico e di poter comunicare direttamente con il cliente per spiegare il problema riscontrato e concordare il preventivo.",
+        a: "Sì, è necessaria la presenza di un adulto durante la chiamata a domicilio e la riparazione. Il tecnico ha bisogno di accedere all'elettrodomestico e di poter comunicare direttamente con il cliente per spiegare il problema riscontrato e concordare il preventivo.",
       },
     ],
   },

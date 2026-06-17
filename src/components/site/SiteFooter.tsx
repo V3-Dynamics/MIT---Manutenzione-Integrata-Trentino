@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Leaf, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Leaf, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
 
@@ -50,6 +50,11 @@ export function SiteFooter() {
             <li>
               <a href={SITE.whatsappDefault} target="_blank" rel="noopener" className="inline-flex items-center gap-2 text-foreground/70 hover:text-[#25D366] transition-colors">
                 <MessageCircle className="h-4 w-4 text-[#25D366] shrink-0" /> WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href={SITE.mailtoDefault} className="inline-flex items-center gap-2 text-foreground/70 hover:text-primary transition-colors">
+                <Mail className="h-4 w-4 text-primary shrink-0" /> {SITE.email}
               </a>
             </li>
             <li className="flex items-start gap-2 text-muted-foreground">
