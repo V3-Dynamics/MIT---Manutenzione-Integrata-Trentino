@@ -36,7 +36,7 @@ export function CookieBanner() {
           al funzionamento. Non vengono raccolti dati di profilazione né utilizzati
           servizi di tracciamento di terze parti.{" "}
           <a
-            href="#"
+            href="/privacy-policy"
             className="underline underline-offset-2 hover:text-primary-foreground transition-colors"
           >
             Privacy Policy
