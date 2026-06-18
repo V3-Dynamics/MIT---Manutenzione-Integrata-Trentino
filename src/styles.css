@@ -214,4 +214,9 @@
     letter-spacing: 0.14em;
     font-weight: 600;
   }
+
+  a, button, [role="button"], label[for], select,
+  [tabindex]:not([tabindex="-1"]) {
+    cursor: pointer;
+  }
 }
