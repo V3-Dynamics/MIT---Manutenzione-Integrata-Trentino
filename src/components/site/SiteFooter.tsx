@@ -34,7 +34,7 @@ export function SiteFooter() {
               <li><Link to="/faq" className="text-foreground/70 hover:text-primary transition-colors">FAQ</Link></li>
             <li><Link to="/chi-siamo" className="text-foreground/70 hover:text-primary transition-colors">Chi Siamo</Link></li>
             <li><Link to="/contatti" className="text-foreground/70 hover:text-primary transition-colors">Contatti</Link></li>
-            <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
+            <li><Link to="/privacy-policy" className="text-foreground/70 hover:text-primary transition-colors">Privacy Policy</Link></li>
           </ul>
         </div>
 
